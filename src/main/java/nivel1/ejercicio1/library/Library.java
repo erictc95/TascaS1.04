@@ -9,5 +9,9 @@ public class Library {
         books = new ArrayList<>();
     }
 
+    public void addBook (String title) {
+        books.add(title);
+    }
+
 
 }
