@@ -13,5 +13,10 @@ public class Library {
         books.add(title);
     }
 
+    public void getBookForPosition (int position) {
+        for (int i = 0; i < books.size(); i++) {
+            System.out.println(books.get(position));
+        }
+    }
 
 }
