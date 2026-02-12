@@ -19,4 +19,8 @@ public class Library {
         }
     }
 
+    public void eraseBook(String title) {
+        books.remove(title);
+    }
+
 }
