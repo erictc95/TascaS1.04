@@ -3,24 +3,32 @@ package nivel1.ejercicio1.library;
 import java.util.ArrayList;
 
 public class Library {
-    ArrayList<String> books = new ArrayList<>();
+    ArrayList<String> books;
 
     public Library() {
         books = new ArrayList<>();
     }
 
-    public void addBook (String title) {
-        books.add(title);
-    }
-
-    public void getBookForPosition (int position) {
-        for (int i = 0; i < books.size(); i++) {
-            System.out.println(books.get(position));
+    public Boolean addBook (String title) {
+        if (!books.contains(title)) {
+            books.add(title);
+            return true;
         }
+        return false;
     }
 
-    public void eraseBook(String title) {
-        books.remove(title);
+    public String getBookForPosition (int position) {
+        for (int i = 0; i < books.size(); i++) {
+            if (position < 0 || position >= books.size()) {
+                return null;
+            }
+            return books.get(position);
+        }
+        return null;
+    }
+
+    public Boolean eraseBook(String title) {
+        return books.remove(title);
     }
 
 }
