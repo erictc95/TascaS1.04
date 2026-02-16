@@ -1,5 +1,6 @@
-package nivel1.ejercicio1.library;
+package nivel1.ejercicio1;
 
+import nivel1.ejercicio1.library.Library;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
