@@ -65,7 +65,7 @@ public class LibraryTest {
     void addBookInEspecificPosition() {
         Library library = new Library();
 
-        library.addBook("Bob el manetes");
+        library.addBook("Bob el Manetes");
         library.addBook("El rey Leon");
 
         //otra manera distinta de comprobar que funciona
