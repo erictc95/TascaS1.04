@@ -23,17 +23,18 @@ public class Library {
     }
 
     public String getBookForPosition(int position) {
-        for (int i = 0; i < books.size(); i++) {
-            if (position < 0 || position >= books.size()) {
-                return null;
-            }
-            return books.get(position);
+        if (position < 0 || position >= books.size()) {
+            return null;
         }
-        return null;
+        return books.get(position);
     }
 
     public boolean eraseBook(String title) {
-        return books.remove(title);
+        if (books.contains(title)) {
+            books.remove(title);
+            return true;
+        }
+        return false;
     }
 
     public boolean addBookInPosition(int position, String title) {
@@ -47,7 +48,7 @@ public class Library {
         return true;
     }
 
-    public ArrayList<String> getSortedBooks () {
+    public ArrayList<String> getSortedBooks() {
         ArrayList<String> sortedBooks = new ArrayList<>(books);
         Collections.sort(sortedBooks);
         return sortedBooks;
