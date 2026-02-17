@@ -1,4 +1,4 @@
-package nivel2.ejercicio1234567;
+package nivel2.ejercicio1234567.assertj;
 
 import java.util.*;
 

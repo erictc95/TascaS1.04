@@ -1,5 +1,6 @@
 package nivel2.ejercicio1234567;
 
+import nivel2.ejercicio1234567.assertj.ExampleData;
 import org.junit.jupiter.api.Test;
 import java.util.List;
 import java.util.Map;
