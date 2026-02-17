@@ -14,13 +14,13 @@ public class CalculateDniTest {
             "0, T",
             "2, W",
             "4, G",
-            "6, M",
-            "8, F",
-            "81726354, S",
-            "18273645, A",
-            "77777777, W",
-            "12873465, K",
-            "87126534, H"
+            "6, Y",
+            "8, P",
+            "81726354, V",
+            "18273645, F",
+            "77777777, B",
+            "12873465, C",
+            "87126534, G"
     })
 
     void testCalculateDniLetterValid(int numberDni, char expectedLetter) {
@@ -41,5 +41,4 @@ public class CalculateDniTest {
            CalculateDni.calculateDniLetter(123456789);
         });
     }
-
 }
