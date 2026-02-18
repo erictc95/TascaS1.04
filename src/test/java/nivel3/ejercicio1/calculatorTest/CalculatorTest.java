@@ -1,5 +1,6 @@
-package nivel3;
+package nivel3.ejercicio1.calculatorTest;
 
+import nivel3.ejercicio1.calculator.Calculator;
 import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;

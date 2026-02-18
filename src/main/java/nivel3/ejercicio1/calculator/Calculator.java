@@ -1,4 +1,4 @@
-package nivel3;
+package nivel3.ejercicio1.calculator;
 
 public class Calculator {
     private double total;
