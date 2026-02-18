@@ -18,4 +18,20 @@ public class Calculator {
     public void subtract(double value) {
         total -= value;
     }
+
+    public void multiply(double value) {
+        total *= value;
+    }
+
+    public void divide(double value) {
+        if (value == 0) {
+            //Throw exception if attempting to divide by zero.
+            throw new ArithmeticException("Cannot divide by zero");
+        }
+        total /= value;
+    }
+
+    public void reset() {
+        total = 0;
+    }
 }

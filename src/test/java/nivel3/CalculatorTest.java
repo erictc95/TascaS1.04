@@ -1,8 +1,8 @@
 package nivel3;
 
 import org.junit.jupiter.api.Test;
-
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 
 public class CalculatorTest {
 
@@ -22,7 +22,23 @@ public class CalculatorTest {
     @Test
     void calculatorSubtractValueCorrectly() {
         Calculator calculator = new Calculator();
+        calculator.add(5);
         calculator.subtract(3);
         assertThat(calculator.getTotal()).isEqualTo(2);
+    }
+
+    @Test
+    void calculatorMultiplyValueCorrect() {
+        Calculator calculator = new Calculator();
+        calculator.add(5);
+        calculator.multiply(10);
+        assertThat(calculator.getTotal()).isEqualTo(50);
+    }
+
+    @Test
+    void calculatorDivideValueCorrect() {
+        Calculator calculator = new Calculator();
+        calculator.add(10);
+        assertThatThrownBy(() -> calculator.divide(0)).isInstanceOf(ArithmeticException.class).hasMessage("Cannot divide by zero.");
     }
 }
