@@ -1,4 +1,4 @@
-# Sprint 1 Task S1.03
+# Sprint 1 Task S1.04
 
 ## Repository with level-1 and level-2 exercises from the Java programming course, developed using IntelliJ IDEA and Maven.
 
