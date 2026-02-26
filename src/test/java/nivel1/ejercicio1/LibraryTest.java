@@ -1,33 +1,35 @@
 package nivel1.ejercicio1;
 
 import nivel1.ejercicio1.library.Library;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
 import java.util.ArrayList;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 public class LibraryTest {
+    private Library library;
+
+    @BeforeEach
+    void setUp() {
+        library = new Library();
+    }
+
     @Test
     void testAddBook () {
-        //Arrange
-        Library library = new Library();
-        //Act
+
         library.addBook("Pocahontas");
-        //Assert
+
         assertEquals(1, library.getAllBooks().size());
     }
 
     @Test
     void collectionShouldNotBeNullAfterCreation() {
-        Library library = new Library();
 
         assertNotNull(library.getAllBooks());
     }
 
     @Test
     void correctSizeLaterAddBooks() {
-        Library library = new Library();
 
         library.addBook("Bob el manetes");
         library.addBook("El rey Leon");
@@ -38,7 +40,6 @@ public class LibraryTest {
 
     @Test
     void booksInCorrectPosition() {
-        Library library = new Library();
 
         library.addBook("Bob el manetes");
         library.addBook("El rey Leon");
@@ -51,19 +52,17 @@ public class LibraryTest {
 
     @Test
     void obtainBookForPosition() {
-        Library library = new Library();
 
         library.addBook("Bob el manetes");
         library.addBook("El rey Leon");
         library.addBook("Aladin");
 
-        assertNull(library.getBookForPosition(1));
+        assertNull(library.getBookForPosition(-1));
         assertNull(library.getBookForPosition(5));
     }
 
     @Test
     void addBookInEspecificPosition() {
-        Library library = new Library();
 
         library.addBook("Bob el Manetes");
         library.addBook("El rey Leon");
@@ -76,22 +75,21 @@ public class LibraryTest {
 
     @Test
     void erasedBook() {
-        Library library = new Library();
+
         library.addBook("El rey Leon");
         library.addBook("Aladin");
         library.addBook("Pocahontas");
         library.addBook("El libro de la selva");
 
-        library.eraseBook("Aladin");
-
+        assertTrue(library.eraseBook("Aladin"));
         assertEquals(3, library.getAllBooks().size());
         assertFalse(library.getAllBooks().contains("Aladin"));
-        assertTrue(library.eraseBook("Aladin"));
+
     }
 
     @Test
     void sortedListAndOriginalListNotModified() {
-        Library library = new Library();
+
         library.addBook("El rey Leon");
         library.addBook("Aladin");
         library.addBook("Pocahontas");
@@ -112,7 +110,6 @@ public class LibraryTest {
 
     @Test
     void duplicatesNotAllowed() {
-        Library library = new Library();
 
         boolean firstAdd = library.addBook("Aladin");
         boolean secondAdd = library.addBook("Aladin");
