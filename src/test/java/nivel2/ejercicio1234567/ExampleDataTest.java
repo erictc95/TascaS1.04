@@ -11,7 +11,7 @@ import static org.assertj.core.api.Assertions.*;
 public class ExampleDataTest {
 
     @Test
-    void testIntegers() {
+    void integers_whenCompared_shouldBeEqualOrNotEqualCorrectly() {
         int a = 1;
         int b = 1;
         int c = 2;
@@ -21,7 +21,7 @@ public class ExampleDataTest {
     }
 
     @Test
-    void testObjectReferences() {
+    void objects_whenSameReference_shouldBeSameAndDifferentInstancesNotSame() {
         String s1 = "Hola";
         String s2 = s1;
         String s3 = new String("Hola");
@@ -31,7 +31,7 @@ public class ExampleDataTest {
     }
 
     @Test
-    void testListAssertions() {
+    void getList_whenCalled_shouldContainExpectedElements() {
         ExampleData data = new ExampleData();
         List<Object> list = data.getList();
 
@@ -42,7 +42,7 @@ public class ExampleDataTest {
     }
 
     @Test
-    void testMapAssertions() {
+    void getMap_whenCalled_shouldContainExpectedEntries() {
         ExampleData data = new ExampleData();
         Map<String, String> map = data.getMap();
 
@@ -52,7 +52,7 @@ public class ExampleDataTest {
     }
 
     @Test
-    void testException() {
+    void arrayAccess_whenIndexIsOutOfBounds_shouldThrowException() {
         int[] arr = {1, 2, 3};
 
         assertThatThrownBy(() -> {
@@ -61,7 +61,7 @@ public class ExampleDataTest {
     }
 
     @Test
-    void testOptional() {
+    void getEmptyOptional_whenCalled_shouldReturnEmptyOptional() {
         ExampleData data = new ExampleData();
         Optional<String> optional = data.getEmptyOptional();
 

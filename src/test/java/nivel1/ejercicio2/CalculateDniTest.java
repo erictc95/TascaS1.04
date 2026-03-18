@@ -23,20 +23,20 @@ public class CalculateDniTest {
             "87126534, G"
     })
 
-    void testCalculateDniLetterValid(int numberDni, char expectedLetter) {
+    void calculateDniLetter_whenNumberIsValid_shouldReturnCorrectLetter(int numberDni, char expectedLetter) {
         char actualLetter = CalculateDni.calculateDniLetter(numberDni);
         assertEquals(expectedLetter, actualLetter, "The letter calculated is incorrect for DNI number: " + numberDni);
     }
 
     @Test
-    void testCalculateLetterNegativeNumber() {
+    void calculateDniLetter_whenNumberIsNegative_shouldThrowIllegalArgumentException() {
         assertThrows(IllegalArgumentException.class, () -> {
             CalculateDni.calculateDniLetter(-1);
         });
     }
 
     @Test
-    void testCalculateLetterNumberTooLarge () {
+    void calculateDniLetter_whenNumberIsTooLarge_shouldThrowIllegalArgumentException() {
         assertThrows(IllegalArgumentException.class, () -> {
            CalculateDni.calculateDniLetter(123456789);
         });

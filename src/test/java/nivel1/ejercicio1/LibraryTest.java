@@ -15,7 +15,7 @@ public class LibraryTest {
     }
 
     @Test
-    void testAddBook () {
+    void addBook_whenBookIsAdded_shouldIncreaseSize() {
 
         library.addBook("Pocahontas");
 
@@ -23,13 +23,13 @@ public class LibraryTest {
     }
 
     @Test
-    void collectionShouldNotBeNullAfterCreation() {
+    void getAllBooks_whenLibraryCreated_shouldNotBeNull() {
 
         assertNotNull(library.getAllBooks());
     }
 
     @Test
-    void correctSizeLaterAddBooks() {
+    void addBooks_whenMultipleBooksAdded_shouldReturnCorrectSize() {
 
         library.addBook("Bob el manetes");
         library.addBook("El rey Leon");
@@ -39,56 +39,55 @@ public class LibraryTest {
     }
 
     @Test
-    void booksInCorrectPosition() {
+    void getBookAt_whenPositionIsValid_shouldReturnCorrectBook() {
 
         library.addBook("Bob el manetes");
         library.addBook("El rey Leon");
         library.addBook("Aladin");
 
-        assertEquals("Bob el manetes", library.getBookForPosition(0));
-        assertEquals("El rey Leon", library.getBookForPosition(1));
-        assertEquals("Aladin", library.getBookForPosition(2));
+        assertEquals("Bob el manetes", library.getBookAt(0));
+        assertEquals("El rey Leon", library.getBookAt(1));
+        assertEquals("Aladin", library.getBookAt(2));
     }
 
     @Test
-    void obtainBookForPosition() {
+    void getBookAt_whenPositionIsInvalid_shouldReturnNull() {
 
         library.addBook("Bob el manetes");
         library.addBook("El rey Leon");
         library.addBook("Aladin");
 
-        assertNull(library.getBookForPosition(-1));
-        assertNull(library.getBookForPosition(5));
+        assertNull(library.getBookAt(-1));
+        assertNull(library.getBookAt(5));
     }
 
     @Test
-    void addBookInEspecificPosition() {
+    void addBookAt_whenPositionIsValid_shouldInsertBook() {
 
         library.addBook("Bob el Manetes");
         library.addBook("El rey Leon");
 
-        //otra manera distinta de comprobar que funciona
-        boolean added = library.addBookInPosition(1, "Pocahontas");
+        boolean added = library.addBookAt(1, "Pocahontas");
 
         assertTrue(added);
     }
 
     @Test
-    void erasedBook() {
+    void removeBook_whenBookExists_shouldRemoveBook() {
 
         library.addBook("El rey Leon");
         library.addBook("Aladin");
         library.addBook("Pocahontas");
         library.addBook("El libro de la selva");
 
-        assertTrue(library.eraseBook("Aladin"));
+        assertTrue(library.removeBook("Aladin"));
         assertEquals(3, library.getAllBooks().size());
         assertFalse(library.getAllBooks().contains("Aladin"));
 
     }
 
     @Test
-    void sortedListAndOriginalListNotModified() {
+    void getSortedBooks_whenCalled_shouldReturnSortedListWithoutModifyingOriginal() {
 
         library.addBook("El rey Leon");
         library.addBook("Aladin");
@@ -109,7 +108,7 @@ public class LibraryTest {
     }
 
     @Test
-    void duplicatesNotAllowed() {
+    void addBook_whenDuplicate_shouldNotBeAdded() {
 
         boolean firstAdd = library.addBook("Aladin");
         boolean secondAdd = library.addBook("Aladin");

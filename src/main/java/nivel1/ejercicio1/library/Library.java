@@ -22,14 +22,14 @@ public class Library {
         return new ArrayList<>(books);
     }
 
-    public String getBookForPosition(int position) {
+    public String getBookAt(int position) {
         if (position < 0 || position >= books.size()) {
             return null;
         }
         return books.get(position);
     }
 
-    public boolean eraseBook(String title) {
+    public boolean removeBook(String title) {
         if (books.contains(title)) {
             books.remove(title);
             return true;
@@ -37,7 +37,7 @@ public class Library {
         return false;
     }
 
-    public boolean addBookInPosition(int position, String title) {
+    public boolean addBookAt(int position, String title) {
         if (position < 0 || position > books.size()) {
             return false;
         }

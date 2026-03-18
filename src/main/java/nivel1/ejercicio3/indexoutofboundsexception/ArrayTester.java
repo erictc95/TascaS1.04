@@ -1,6 +1,4 @@
-package nivel1.ejercicio3.indexoutofbounsdexception;
-
-import java.util.ArrayList;
+package nivel1.ejercicio3.indexoutofboundsexception;
 
 public class ArrayTester {
 

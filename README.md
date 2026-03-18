@@ -14,7 +14,7 @@
  
 ## ⚙️ Requirements
 
-- Java JDK 11 o superior
+- Java JDK 25 (project developed and tested with this version)
 - Maven
 - IntelliJ IDEA (optional, but recommended)
 
@@ -53,14 +53,73 @@ Level-2 / Exercise 1: ejercicio1234567.assertj
 
 Level-3 / Exercise 1: ejercicio1.calculator
 
-
-
 You can also open each Main.java class in IntelliJ and run it directly from the IDE.
+
+
+🧪 Running Tests
+
+This project includes unit tests using JUnit 5 and AssertJ.
+
+Run all tests:
+
+mvn test
+
+Run a specific test class:
+
+mvn -Dtest=ClassName test
+
+Example:
+
+mvn -Dtest=LibraryTest test
+
+In IntelliJ IDEA, you can also right-click on any test class and select Run.
+
+📦 Dependencies
+
+Main dependencies used in this project:
+
+JUnit 5 → unit testing framework
+
+AssertJ → fluent assertions library
+
+Maven → build and dependency management
+
+Example configuration from pom.xml:
+
+<dependencies>
+    <dependency>
+        <groupId>org.junit.jupiter</groupId>
+        <artifactId>junit-jupiter</artifactId>
+        <version>5.x.x</version>
+        <scope>test</scope>
+    </dependency>
+
+    <dependency>
+        <groupId>org.assertj</groupId>
+        <artifactId>assertj-core</artifactId>
+        <version>3.x.x</version>
+        <scope>test</scope>
+    </dependency>
+</dependencies>
 
 ## 📝 Usage
 
 Each level folder contains independent exercises.
 The exercises demonstrate Java concepts such as different uses of `ArrayList`, `HashMap`, `Test` with `JUnit5` and `AssertJ`.
+
+🧩 Exercise Notes
+
+Level 1
+
+Focus on basic Java concepts and testing fundamentals
+
+Level 2
+
+Focus on improving assertions using AssertJ
+
+Level 3
+
+Combines logic + full test coverage for calculator operations
 
 ## 🤝 Contributions
 
