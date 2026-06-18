@@ -26,7 +26,7 @@ public class Calculator {
     public void divide(double value) {
         if (value == 0) {
             //Throw exception if attempting to divide by zero.
-            throw new ArithmeticException("Cannot divide by zero");
+            throw new ArithmeticException("Cannot divide by zero.");
         }
         total /= value;
     }
